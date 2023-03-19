@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PhotoArena</string>
+
+    <!-- Common -->
+    <string name="common_error_default">Sorry! Something went wrong</string>
+
+    <string name="home_title">Home</string>
+    <string name="home_detail_title">Detail</string>
+
+    <string name="photos_empty_list_title">Oops! we’re not quite there yet</string>
+    <string name="photos_empty_list_description">No result found, try to find different query</string>
+
+    <string name="total_likes_text">%1$s</string>
+    <string name="total_downloads_text">%1$s</string>
+    <string name="total_comments_text">%1$s</string>
+</resources>

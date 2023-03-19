@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_spacing_small"
+        android:paddingTop="@dimen/standard_spacing_medium"
+        android:paddingBottom="@dimen/standard_spacing_small">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/phoneArenaCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/background_card_default"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardCornerRadius="@dimen/radius_card_default"
+            app:cardElevation="0dp"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/phoneArenaCardImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CardView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/standard_spacing_large"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:elevation="@dimen/elevation_card_default"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/standard_spacing_medium"
+                    android:background="@drawable/background_tag_home"
+                    android:paddingHorizontal="@dimen/standard_spacing_small">
+
+                    <TextView
+                        android:id="@+id/badgeTextView"
+                        style="@style/TextAppearance.App.Body1.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/elevation_card_default"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textColor="@color/colorBlack"
+                        android:textDirection="locale"
+                        android:textSize="@dimen/text_size_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@tools:sample/lorem[3]"
+                        tools:visibility="visible" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/TextAppearance.App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phoneArenaCardView"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:layout_marginTop="@dimen/standard_spacing_small"
+            android:textColor="@color/midnight_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneArenaCardView"
+            tools:text="@tools:sample/lorem[4]" />
+
+        <TextView
+            android:id="@+id/totalLikeLabelTextView"
+            style="@style/TextAppearance.App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_spacing_tiny"
+            android:textColor="@color/midnight_gray"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:text="@string/total_likes_label"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <TextView
+            android:id="@+id/subTitleTextView"
+            style="@style/TextAppearance.App.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_spacing_tiny"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:includeFontPadding="false"
+            android:textColor="@color/midnight_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/totalLikeLabelTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/totalLikeLabelTextView"
+            app:layout_constraintTop_toTopOf="@+id/totalLikeLabelTextView"
+            tools:text="@tools:sample/lorem[4]" />
+
+        <TextView
+            android:id="@+id/totalDownloadLabelTextView"
+            style="@style/TextAppearance.App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_spacing_tiny"
+            android:textColor="@color/midnight_gray"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:text="@string/total_downloads_label"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalLikeLabelTextView" />
+
+        <TextView
+            android:id="@+id/bodyTextView"
+            style="@style/TextAppearance.App.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_spacing_tiny"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:includeFontPadding="false"
+            android:textColor="@color/midnight_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/totalDownloadLabelTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/totalDownloadLabelTextView"
+            app:layout_constraintTop_toTopOf="@+id/totalDownloadLabelTextView"
+            tools:text="@tools:sample/lorem[4]" />
+
+        <TextView
+            android:id="@+id/totalCommentsLabelTextView"
+            style="@style/TextAppearance.App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_spacing_tiny"
+            android:textColor="@color/midnight_gray"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:text="@string/total_comments_label"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalDownloadLabelTextView" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            style="@style/TextAppearance.App.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/standard_spacing_tiny"
+            android:textColor="@color/midnight_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/totalCommentsLabelTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/totalCommentsLabelTextView"
+            app:layout_constraintTop_toTopOf="@+id/totalCommentsLabelTextView"
+            tools:text="@tools:sample/lorem[4]" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

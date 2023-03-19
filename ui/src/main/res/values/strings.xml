@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PhotoArena</string>
+
+    <string name="search_hint_text">Search photos</string>
+
+    <string name="dialog_title_text">Do you want to see more details</string>
+
+    <string name="button_cancel_text">Cancel</string>
+    <string name="button_positive_text">Yes</string>
+
+    <string name="total_likes_label">Total likes:</string>
+    <string name="total_downloads_label">Total downloads:</string>
+    <string name="total_comments_label">Total comments:</string>
+</resources>

@@ -1,0 +1,91 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.code.challenge.photoarena'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.code.challenge.photoarena"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "buildType"
+
+    productFlavors {
+        dev {
+            dimension "buildType"
+            buildConfigField 'String', 'BASE_URL', '"https://pixabay.com/"'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles
+            getDefaultProguardFile('proguard-android-optimize.txt'); 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    implementation project(":ui")
+
+    implementation "com.google.android.material:material:$material"
+
+    implementation "androidx.core:core-ktx:$kotlin"
+
+    implementation "androidx.constraintlayout:constraintlayout:$material_constraint"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation "androidx.activity:activity-ktx:$activity_ktx"
+    implementation "androidx.recyclerview:recyclerview:$androidX_recyclerview"
+
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_ktx"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_ktx"
+
+    implementation "io.insert-koin:koin-android:$koin"
+    implementation "io.insert-koin:koin-androidx-navigation:$koin"
+    implementation "io.insert-koin:koin-test:$koin"
+
+    implementation "com.squareup.moshi:moshi:$moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+    implementation "com.squareup.moshi:moshi-adapters:$moshi"
+    implementation "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+    implementation "com.google.code.gson:gson:$retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor"
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipetorefresh"
+
+    implementation "io.coil-kt:coil:$coil"
+
+    implementation "com.jakewharton.timber:timber:$timber"
+
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin"
+    testImplementation "io.mockk:mockk:$mockkVersion"
+}

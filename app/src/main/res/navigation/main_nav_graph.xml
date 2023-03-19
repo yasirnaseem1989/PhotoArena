@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.code.challenge.photoarena.view.fragments.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.code.challenge.photoarena.view.fragments.detail.DetailFragment"
+        android:label="@string/home_detail_title"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="tags"
+            app:argType="string" />
+        <argument
+            android:name="totalLikes"
+            app:argType="string" />
+        <argument
+            android:name="totalDownloads"
+            app:argType="string" />
+        <argument
+            android:name="totalComments"
+            app:argType="string" />
+    </fragment>
+</navigation>

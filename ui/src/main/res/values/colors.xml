@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_gray_20">#33D8D8D8</color>
+    <color name="midnight_gray">#212121</color>
+    <color name="spanish_gray">#969696</color>
+
+    <color name="colorPrimaryDark">#f5f5f5</color>
+
+    <color name="colorBrand">#08bfb0</color>
+    <color name="colorAccent">@color/colorBrand</color>
+    <color name="accent">@color/colorAccent</color>
+
+    <color name="colorTextPrimary">#594A42</color>
+
+    <color name="light_gray">#D8D8D8</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="background_card_default">#F5F1EE</color>
+</resources>
