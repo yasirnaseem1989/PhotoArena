@@ -2,10 +2,11 @@
 A simple photos gallery application using pixabay AP. Using Android latest Architecture component. (MVVM (Clean Architecture) + Kotlin + Retrofit2 + Coil + Navigation Component + Coroutines + Flow
 
 <div align="center">
-  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screenshot_20210824-221827_SculptureArena.jpg" width="230px" />  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screenshot_20210824-221831_SculptureArena.jpg" width="230px" /><br>
-  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screenshot_20210824-222619_SculptureArena.jpg" width="230px" /> 
-  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screenshot_20210824-221853_SculptureArena.jpg" width="230px" />  
-  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screenshot_20210824-221915_SculptureArena.jpg" width="230px" />
+  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 10.57.12 PM.png" width="230px" />  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 10.57.44 PM.png" width="230px" /><br>
+  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 10.58.06 PM.png" width="230px" /> 
+  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 10.58.30 PM.png" width="230px" />  
+  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 10.59.38 PM.png" width="230px" />
+  <img src="https://github.com/yasirnaseem1990/SculptureArena/blob/master/screenshots/Screen Shot 2023-03-21 at 11.00.11 PM.png" width="230px" />
 </div>
 
 ## Features
