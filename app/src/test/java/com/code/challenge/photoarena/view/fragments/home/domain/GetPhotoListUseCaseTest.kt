@@ -22,9 +22,9 @@ class GetPhotoListUseCaseTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    val homeRepository: HomeRepository = mockk()
+    private val homeRepository: HomeRepository = mockk()
 
-    lateinit var getPhotoListUseCase: GetPhotoListUseCase
+    private lateinit var getPhotoListUseCase: GetPhotoListUseCase
 
     @Before
     fun setUp() {
@@ -38,12 +38,9 @@ class GetPhotoListUseCaseTest {
             homeRepository.getPhotos(any())
         } returns Success(data)
         val request = PhotoRequest(query = "fruits")
-        getPhotoListUseCase.invoke(request) {
-            it.result {
-                assertEquals(data, it)
-            }
-            assertTrue(it.isSuccess)
-        }
+        val response = getPhotoListUseCase.invoke(request)
+        assertTrue(response.isSuccess)
+        assertEquals(data, (response as Success).data)
     }
 
     @Test
@@ -52,12 +49,9 @@ class GetPhotoListUseCaseTest {
             homeRepository.getPhotos(any())
         } returns Success(emptyList())
         val request = PhotoRequest(query = "")
-        getPhotoListUseCase.invoke(request) {
-            it.result {
-                assertEquals(emptyList(), it)
-            }
-            assertTrue(it.isSuccess)
-        }
+        val response = getPhotoListUseCase.invoke(request)
+        assertTrue(response.isSuccess)
+        assertEquals(emptyList(), (response as Success).data)
     }
 
     @Test
@@ -66,9 +60,7 @@ class GetPhotoListUseCaseTest {
             homeRepository.getPhotos(any())
         } returns Error(NoPhotosFailure)
         val request = PhotoRequest(query = "@0994300")
-        getPhotoListUseCase.invoke(request) {
-            assertTrue(it.isError)
-        }
+        val response = getPhotoListUseCase.invoke(request)
+        assertTrue(response.isError)
     }
-
 }

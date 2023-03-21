@@ -1,4 +1,4 @@
-package com.code.challenge.ui.loading.widget
+package com.code.challenge.ui.widget
 
 import android.content.Context
 import android.util.AttributeSet

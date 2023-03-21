@@ -1,4 +1,4 @@
-package com.code.challenge.ui.loading.dialog
+package com.code.challenge.ui.dialog
 
 import android.content.Context
 import android.view.LayoutInflater

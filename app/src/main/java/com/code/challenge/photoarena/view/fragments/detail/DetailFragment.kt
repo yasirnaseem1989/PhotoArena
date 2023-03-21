@@ -7,8 +7,8 @@ import androidx.navigation.fragment.navArgs
 import com.code.challenge.photoarena.base.BaseFragment
 import com.code.challenge.photoarena.databinding.FragmentDetailBinding
 import com.code.challenge.photoarena.ext.launchAndRepeatWithViewLifecycle
-import com.code.challenge.ui.loading.ext.LoadingProperty
-import com.code.challenge.ui.loading.loading.LoadingHandler
+import com.code.challenge.ui.ext.LoadingProperty
+import com.code.challenge.ui.loading.LoadingHandler
 import com.code.challenge.ui.model.PhoneArenaCard
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

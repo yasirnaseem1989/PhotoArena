@@ -3,6 +3,8 @@ package com.code.challenge.photoarena.view.fragments.home
 import androidx.lifecycle.viewModelScope
 import com.code.challenge.photoarena.base.BaseViewModel
 import com.code.challenge.photoarena.base.BaseViewModel.ViewEvent
+import com.code.challenge.photoarena.domain.PhotosResult
+import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.ClearSearchQuery
 import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.NavigateToDetail
 import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.ShowConfirmationDialog
 import com.code.challenge.photoarena.view.fragments.home.data.HomeResourceProvider
@@ -24,7 +26,6 @@ class HomeViewModel(
     val homeState = _homeState.asStateFlow()
 
     private var photosRequest = PhotoRequest()
-    private var query: String = ""
 
     fun getPhotosInitial() {
         viewModelScope.launch {
@@ -38,19 +39,26 @@ class HomeViewModel(
 
     private fun getPhotos() {
         viewModelScope.launch {
-            getPhotoListUseCase(photosRequest) {
-                it.result(onSuccess = { data ->
-                    _homeState.update { homeUiState ->
-                        homeUiState.copy(
-                            isLoading = false, photos = data
-                        )
-                    }
-                }, onError = {
-                    _homeState.update { homeUiState ->
-                        homeUiState.copy(isLoading = false)
-                    }
-                })
+            val response =  getPhotoListUseCase(photosRequest)
+            if (response is PhotosResult.Success) {
+                _homeState.update { homeUiState ->
+                    homeUiState.copy(
+                        isLoading = false, photos = response.data
+                    )
+                }
             }
+            else {
+                _homeState.update { homeUiState ->
+                    homeUiState.copy(isLoading = false)
+                }
+            }
+        }
+    }
+
+    fun clearTextClicked() {
+        viewModelScope.launch {
+            tryEmitViewEvent(ClearSearchQuery)
+            getPhotosInitial()
         }
     }
 
@@ -100,6 +108,7 @@ data class HomeUiState(
 }
 
 sealed class HomeViewEvent : ViewEvent() {
+    object ClearSearchQuery : HomeViewEvent()
     data class ShowConfirmationDialog(
         val title: String,
         val positiveButtonText: String,

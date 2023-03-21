@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="@+id/searchEditText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.code.challenge.ui.loading.widget.SwipeRefreshLayout
+    <com.code.challenge.ui.widget.SwipeRefreshLayout
         android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -75,7 +75,7 @@
             android:layout_height="0dp"
             tools:listitem="@layout/item_photos"
             android:overScrollMode="never" />
-    </com.code.challenge.ui.loading.widget.SwipeRefreshLayout>
+    </com.code.challenge.ui.widget.SwipeRefreshLayout>
 
     <include
         android:id="@+id/emptyLayout"

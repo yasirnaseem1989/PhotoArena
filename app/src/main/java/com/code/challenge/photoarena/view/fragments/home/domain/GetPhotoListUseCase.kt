@@ -26,7 +26,8 @@ class GetPhotoListUseCase(
     companion object {
         const val QUERY_DEFAULT = "fruits"
     }
-}
+ }
+
 
 data class PhotoRequest(
     val query: String = ""

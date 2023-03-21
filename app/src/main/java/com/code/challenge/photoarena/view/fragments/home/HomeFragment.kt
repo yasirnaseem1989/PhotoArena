@@ -12,14 +12,15 @@ import com.code.challenge.photoarena.base.observeInLifecycle
 import com.code.challenge.photoarena.databinding.FragmentHomeBinding
 import com.code.challenge.photoarena.ext.launchAndRepeatWithViewLifecycle
 import com.code.challenge.photoarena.ext.textChanges
+import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.ClearSearchQuery
 import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.NavigateToDetail
 import com.code.challenge.photoarena.view.fragments.home.HomeViewEvent.ShowConfirmationDialog
-import com.code.challenge.ui.loading.dialog.onNegative
-import com.code.challenge.ui.loading.dialog.onPositive
-import com.code.challenge.ui.loading.dialog.photoArenaDialog
-import com.code.challenge.ui.loading.dialog.title
-import com.code.challenge.ui.loading.ext.LoadingProperty
-import com.code.challenge.ui.loading.loading.LoadingHandler
+import com.code.challenge.ui.dialog.onNegative
+import com.code.challenge.ui.dialog.onPositive
+import com.code.challenge.ui.dialog.photoArenaDialog
+import com.code.challenge.ui.dialog.title
+import com.code.challenge.ui.ext.LoadingProperty
+import com.code.challenge.ui.loading.LoadingHandler
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.debounce
@@ -72,6 +73,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         _binding?.swipeLayout?.onRefreshed {
             homeViewModel.getPhotosInitial()
         }
+        _binding?.searchClearImageView?.setOnClickListener {
+            homeViewModel.clearTextClicked()
+        }
     }
 
     override fun observeViewModel() {
@@ -89,6 +93,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                             onNegative(it.negativeButtonText) {}
                         }
                         dialog.show()
+                    }
+                    is ClearSearchQuery -> {
+                        _binding?.searchClearImageView?.isVisible = false
+                        _binding?.searchEditText?.text?.clear()
                     }
                     is NavigateToDetail -> {
                         val directions = HomeFragmentDirections.actionHomeFragmentToDetailFragment(

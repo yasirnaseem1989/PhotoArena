@@ -4,8 +4,10 @@ import com.code.challenge.photoarena.di.DISPATCHER_IO
 import com.code.challenge.photoarena.view.fragments.detail.DetailViewModel
 import com.code.challenge.photoarena.view.fragments.home.HomeViewModel
 import com.code.challenge.photoarena.view.fragments.home.data.HomeDataSource
+import com.code.challenge.photoarena.view.fragments.home.data.HomeLocalDataSource
 import com.code.challenge.photoarena.view.fragments.home.data.HomeRepository
 import com.code.challenge.photoarena.view.fragments.home.data.HomeResourceProvider
+import com.code.challenge.photoarena.view.fragments.home.data.LocalPhotosDataSource
 import com.code.challenge.photoarena.view.fragments.home.data.PhotosMapper
 import com.code.challenge.photoarena.view.fragments.home.data.RemoteHomeDateSource
 import com.code.challenge.photoarena.view.fragments.home.domain.GetPhotoListUseCase
@@ -37,13 +39,15 @@ val homeModule = module {
     factory(named(MAPPER_PHOTOS_REMOTE)) {
         PhotosMapper(get())
     }
-    /*factory<BranchesDataSource>(named(DATA_SOURCE_BRANCHES_LOCAL)) {
-        LocalBranchesDataSource(get())
-    }*/
+
+    factory<HomeLocalDataSource>(named(DATA_SOURCE_HOME_LOCAL)) {
+        LocalPhotosDataSource(get())
+    }
 
     factory(named(REPOSITORY_HOME)) {
         HomeRepository(
-            get(named(DATA_SOURCE_HOME_REMOTE))
+            get(named(DATA_SOURCE_HOME_REMOTE)),
+            get(named(DATA_SOURCE_HOME_LOCAL))
         )
     }
 

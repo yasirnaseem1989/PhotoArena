@@ -3,8 +3,9 @@ package com.code.challenge.photoarena
 import android.app.Application
 import com.code.challenge.photoarena.di.coroutineDispatcherModule
 import com.code.challenge.photoarena.di.networkModule
+import com.code.challenge.photoarena.view.fragments.home.db.databaseModule
 import com.code.challenge.photoarena.view.fragments.homeModule
-import com.code.challenge.ui.loading.uiModule
+import com.code.challenge.ui.uiModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.logger.AndroidLogger
 import org.koin.core.context.startKoin
@@ -30,7 +31,8 @@ class PhotoArenaApp : Application() {
                     networkModule,
                     homeModule,
                     coroutineDispatcherModule,
-                    uiModule
+                    uiModule,
+                    databaseModule
                 )
             )
         }

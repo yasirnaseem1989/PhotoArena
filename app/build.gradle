@@ -86,6 +86,9 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:$timber"
 
+    implementation "androidx.room:room-runtime:$room"
+    annotationProcessor "androidx.room:room-compiler:$room"
+
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin"
     testImplementation "io.mockk:mockk:$mockkVersion"
 }

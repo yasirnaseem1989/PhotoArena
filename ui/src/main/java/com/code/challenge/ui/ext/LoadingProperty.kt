@@ -1,7 +1,7 @@
-package com.code.challenge.ui.loading.ext
+package com.code.challenge.ui.ext
 
 import androidx.fragment.app.Fragment
-import com.code.challenge.ui.loading.loading.LoadingHandler
+import com.code.challenge.ui.loading.LoadingHandler
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 import kotlin.properties.ReadOnlyProperty

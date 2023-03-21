@@ -1,11 +1,12 @@
-package com.code.challenge.ui.loading.loading
+package com.code.challenge.ui.loading
 
 import android.app.Dialog
 import android.content.Context
 import android.view.Window
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import com.code.challenge.ui.R
+import com.code.challenge.ui.R.layout
+import com.code.challenge.ui.R.style
 import timber.log.Timber
 import java.lang.ref.WeakReference
 import java.util.concurrent.atomic.AtomicBoolean
@@ -18,9 +19,9 @@ class LoadingHandler(private val context: Context) : DefaultLifecycleObserver {
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
 
-        val dialog = Dialog(context, R.style.Photo_Arena_Dialog_Loading)
+        val dialog = Dialog(context, style.Photo_Arena_Dialog_Loading)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.layout_loading)
+        dialog.setContentView(layout.layout_loading)
         dialog.setCancelable(false)
         this.dialogRef = WeakReference<Dialog>(dialog)
     }

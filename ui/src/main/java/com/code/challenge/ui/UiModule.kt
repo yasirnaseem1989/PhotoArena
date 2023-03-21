@@ -1,6 +1,6 @@
-package com.code.challenge.ui.loading
+package com.code.challenge.ui
 
-import com.code.challenge.ui.loading.loading.LoadingHandler
+import com.code.challenge.ui.loading.LoadingHandler
 import org.koin.dsl.module
 
 val uiModule = module {
