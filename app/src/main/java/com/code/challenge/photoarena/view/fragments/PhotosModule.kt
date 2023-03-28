@@ -36,12 +36,12 @@ val homeModule = module {
         RemoteHomeDateSource(get(), get(named(MAPPER_PHOTOS_REMOTE)))
     }
 
-    factory(named(MAPPER_PHOTOS_REMOTE)) {
-        PhotosMapper(get())
-    }
-
     factory<HomeLocalDataSource>(named(DATA_SOURCE_HOME_LOCAL)) {
         LocalPhotosDataSource(get())
+    }
+
+    factory(named(MAPPER_PHOTOS_REMOTE)) {
+        PhotosMapper(get())
     }
 
     factory(named(REPOSITORY_HOME)) {

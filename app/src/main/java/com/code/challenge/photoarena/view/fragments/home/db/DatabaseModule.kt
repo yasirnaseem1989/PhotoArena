@@ -14,11 +14,11 @@ val databaseModule = module {
             FILENAME_PHOTOS_DB
         )
             .addTypeConverter(get<PhotosConverter>())
+            .fallbackToDestructiveMigration()
             .build()
     }
 
     single { get<PhotoArenaDatabase>().photosListDao() }
-
 
     factory { PhotosConverter() }
 }

@@ -7,8 +7,7 @@ import com.code.challenge.ui.R
 
 class SwipeRefreshLayout @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    attrs: AttributeSet? = null
 ) : SwipeRefreshLayout(context, attrs) {
 
     init {

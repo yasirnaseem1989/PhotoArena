@@ -1,7 +1,9 @@
 package com.code.challenge.photoarena.view.fragments.home.model
 
+import androidx.annotation.Keep
 import com.squareup.moshi.JsonClass
 
+@Keep
 @JsonClass(generateAdapter = true)
 data class RemotePhotoResponse(
     val total: Int? = null,
@@ -9,6 +11,7 @@ data class RemotePhotoResponse(
     val hits: List<RemotePhotos> = emptyList()
 )
 
+@Keep
 @JsonClass(generateAdapter = true)
 data class RemotePhotos(
     val id: Int? = null,

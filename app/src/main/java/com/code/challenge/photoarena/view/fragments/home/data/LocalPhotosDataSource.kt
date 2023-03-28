@@ -7,14 +7,14 @@ import com.code.challenge.photoarena.view.fragments.home.db.PhotosDao
 import com.code.challenge.photoarena.view.fragments.home.model.Photos
 
 class LocalPhotosDataSource(
-    private val photoDao: PhotosDao,
+    private val photosDao: PhotosDao
 ) : HomeLocalDataSource {
 
     override suspend fun getPhotoList(): PhotosResult<Failure, List<Photos>> {
-       return Success(photoDao.getAllPhotos())
+        return Success(emptyList())
     }
 
     override suspend fun insertAllPhotos(photos: List<Photos>) {
-        photoDao.insertAllPhotos(photos)
+        photosDao.insertAllPhotos(photos = photos)
     }
 }
