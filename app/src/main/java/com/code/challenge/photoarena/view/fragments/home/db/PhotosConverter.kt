@@ -1,12 +1,10 @@
 package com.code.challenge.photoarena.view.fragments.home.db
 
-import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import com.code.challenge.photoarena.view.fragments.home.model.Photos
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-@ProvidedTypeConverter
 class PhotosConverter {
 
     @TypeConverter

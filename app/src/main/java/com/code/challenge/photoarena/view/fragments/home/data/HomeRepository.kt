@@ -12,10 +12,10 @@ class HomeRepository(
     suspend fun getPhotos(param: PhotoRequest): PhotosResult<Failure, List<Photos>> =
         remoteHomeDataSource.getPhotosList(param)
 
-    /* suspend fun insertAllPhotos(photos: List<Photos>){
+     suspend fun insertAllPhotos(photos: List<Photos>) {
          localHomeLocalDataSource.insertAllPhotos(photos)
      }
 
-     suspend fun getPhotoList() = localHomeLocalDataSource.getPhotoList()*/
+    suspend fun getPhotoList() = localHomeLocalDataSource.getPhotoList()
 }
 

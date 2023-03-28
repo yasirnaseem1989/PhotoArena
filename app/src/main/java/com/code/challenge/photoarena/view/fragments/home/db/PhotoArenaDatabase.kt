@@ -5,9 +5,11 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.code.challenge.photoarena.view.fragments.home.model.Photos
 
-@Database(entities = [Photos::class], version = 1, exportSchema = false)
-
+@Database(
+    entities = [Photos::class], version = 1, exportSchema = false
+)
 @TypeConverters(PhotosConverter::class)
+
 abstract class PhotoArenaDatabase : RoomDatabase() {
-    abstract fun photosListDao(): PhotosDao
+    abstract val photosListDao: PhotosDao
 }

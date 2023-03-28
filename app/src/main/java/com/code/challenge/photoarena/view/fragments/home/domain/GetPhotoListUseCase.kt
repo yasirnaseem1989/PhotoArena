@@ -19,15 +19,17 @@ class GetPhotoListUseCase(
         if (params.query.isEmpty()) {
             Error(NoPhotosFailure)
         }
-
-        return homeRepository.getPhotos(params)
+        val result = homeRepository.getPhotos(params)
+        if (result is PhotosResult.Success) {
+            homeRepository.insertAllPhotos(result.data)
+        }
+        return result
     }
 
     companion object {
         const val QUERY_DEFAULT = "fruits"
     }
  }
-
 
 data class PhotoRequest(
     val query: String = ""
